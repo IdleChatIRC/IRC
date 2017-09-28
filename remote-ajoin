@@ -1,24 +1,22 @@
 ;----------------------------------------------------------------------------
 ; * Name    :    Simple Auto Join
 ; * Author  :    Radien (brandon)
-;                IRC: channel #damdevil in irc.damdevil.org
-;                Web: http://code.google.com/p/itechnet/source/browse/trunk/mIRC%20Scripts/Radien/
-; * Version :    0.1
-; * Date    :    April 18th, 2012
+;                IRC: channel #damdevil in irc.idlechat.net
+;                Web: https://github.com/IdleChatIRC/IRC/edit/master/remote-ajoin
+; * Version :    0.2
+; * Date    :    September 27th, 2017
 ; * Notes   :    Edit Data and place in remotes.
 ;----------------------------------------------------------------------------
 
 on *:start: {
-server irc.damdevil.org
-server -m irc.example.com
-server -m irc.example.info
-server -m irc.example.net
-server -m irc.example.co.uk
+server irc.idlechat.net
+server -m irc.idlechat.org
+server -m irc.idlechat.co.uk
 }
 
 on *:connect: {
-if ($network == DamDevilIRC) { nick Radien | msg nickserv id somepass | join #lobby,#damdevil,#as,#many,#channels,#here,#as,#you,#want }
-if ($network == Example.Com) { nick Radien | msg nickserv id somepass | join #firefly,#damdevil }
-if ($network == Example.Net) { nick Radien | msg nickserv id somepass | join #firefly,#damdevil }
-if ($server == some.irc.server) { nick Radien | msg nickserv id somepass | join #firefly,#damdevil }
+if ($network == IdleChat) { nick Radien | msg nickserv id somepass | join #lobby,#damdevil,#as,#many,#channels,#here,#as,#you,#want }
+if ($network == IdleChat UK) { nick Radien | msg nickserv id somepass | join #idlechat,#damdevil }
+if ($network == 127.0.0.1) { nick Radien | msg nickserv id somepass | join #idlechat,#damdevil }
+if ($server == idlechat.server.dns) { nick Radien | msg nickserv id somepass | join #idlechat,#damdevil }
 }
